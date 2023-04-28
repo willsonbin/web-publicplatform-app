@@ -19,7 +19,7 @@
         <div class="flow-modal" :style="{'padding-bottom': flag[0] ? '20px' : '0px'}" v-if="formData.materials.id">
             <img class="foot-mark" v-if="flag[0] && formData.product.id" src="@/assets/foot-mark.png"/>
             <div class="row-title-circle">
-              <span>原产地信息</span>
+              <span>原（料）产地信息</span>
               <span v-if="flag[0]" @click="flag[0] = false"><van-icon name="arrow-down" /></span>
               <span v-else @click="flag[0] = true"><van-icon name="arrow-up" /></span>
               <i class="circle circle-left" v-if="flag[0]"></i>

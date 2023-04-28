@@ -40,7 +40,7 @@
           <p>{{formData.goosInfo.materialName}}</p>
         </li>
         <li>
-          <h5>营养成分表：</h5>
+          <h5>配料表（成分表）：</h5>
           <p>{{formData.goosInfo.nutritionFacts}}</p>
         </li>
         <li v-for="(item) in formData.goosInfo.attr" :key="item.id">

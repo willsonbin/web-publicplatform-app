@@ -42,7 +42,7 @@
       </div>
       <ul class="list " v-for="(item, index) in formData.orgApprove" :key="index">
         <li>
-          <h5>证书名称：</h5>
+          <h5>认证名称：</h5>
           <p>{{item.certificationName}}</p>
         </li>
         <li>

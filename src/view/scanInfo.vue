@@ -10,6 +10,9 @@
     <!-- 内容 -->
     <div class="content" :style="{'padding-top': (!formData.goosInfo.images || formData.goosInfo.images.length == 0) ? '20px' : '0'}">
       <div class="picture" v-if="formData.goosInfo && formData.goosInfo.images && formData.goosInfo.images.length > 0">
+        <div>
+          <img src="../view/logo.png" style="width: 366px" alt=""/>
+        </div>
         <div class="white-box">
           <!-- 商品图片 -->
           <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white" v-if="formData.goosInfo && formData.goosInfo.images && formData.goosInfo.images.length > 0">
@@ -323,12 +326,12 @@ export default {
       top: -66%;
       left: -10%;
       border-radius: 20%;
-      background: #1A9D98;
+      //background: #1A9D98;
     }
     .tabs {
       display: flex;
       padding: 0 10px;
-      margin: 0 0 16px 0;
+      margin: 16px 0 16px 0;
       .van-button{
         flex:1;
         font-size: 15px;
