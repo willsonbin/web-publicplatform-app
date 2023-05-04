@@ -9,15 +9,16 @@
     /> -->
     <!-- 内容 -->
     <div class="content" :style="{'padding-top': (!formData.goosInfo.images || formData.goosInfo.images.length == 0) ? '20px' : '0'}">
+      <!-- logo图片 -->
+      <div style="padding: 0 12px;">
+        <img src="../view/logo.png" alt="" style="margin:0;width: 100%;height: 100%;border-radius: 6px;"/>
+      </div>
       <div class="picture" v-if="formData.goosInfo && formData.goosInfo.images && formData.goosInfo.images.length > 0">
-        <div>
-          <img src="../view/logo.png" style="width: 366px" alt=""/>
-        </div>
         <div class="white-box">
           <!-- 商品图片 -->
           <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white" v-if="formData.goosInfo && formData.goosInfo.images && formData.goosInfo.images.length > 0">
             <van-swipe-item v-for="(item, index) in formData.goosInfo.images" :key="index">
-              <img :src="item.url"/>
+              <img :src="item.url"  alt=""/>
             </van-swipe-item>
           </van-swipe>
         </div>
@@ -53,7 +54,7 @@
           <!-- <p>我们为你提供优质的服务</p> -->
           <div class="pic">
             <p><span>1</span>【长按】识别小程序码</p>
-            <img src="../assets/check-app.jpg"/>
+            <img src="../assets/check-app.jpg"  alt=""/>
           </div>
           <div class="pic">
             <p><span style="margin-right: 10px">2</span> 扫描产品标签上“防伪标识”</p>
@@ -69,10 +70,11 @@
 </template>
 
 <script>
-import { Toast } from 'vant'
+import {Toast} from 'vant'
 import GoodsModal from './model/goodsModal.vue'
 import OrgModal from './model/orgModal.vue'
 import FlowModal from './model/flowModal.vue'
+
 export default {
   components: {GoodsModal, OrgModal, FlowModal},
   data () {
@@ -123,11 +125,7 @@ export default {
     // }
   },
   activated () {
-    if (this.$route.query && this.$route.query.jump && (this.$route.query.jump === true || this.$route.query.jump === 'true')) {
-      this.showMark = true
-    } else {
-      this.showMark = false
-    }
+    this.showMark = !!(this.$route.query && this.$route.query.jump && (this.$route.query.jump === true || this.$route.query.jump === 'true'))
     if (this.$route.query && this.$route.query.code) {
       this.activeIndex = 0
       this.getCodeData(this.$route.query.code, this.showMark)
@@ -147,7 +145,7 @@ export default {
       this.$router.push({path: '/app/feedBack', query: this.feedBack})
     },
     getCodeData (code, showMark) {
-      let formData = {
+      this.formData = {
         product: {},
         materials: {},
         organization: {},
@@ -157,7 +155,6 @@ export default {
         goosInfo: {},
         deliveryRecords: []
       }
-      this.formData = formData
       this.feedBack = {
         code: '',
         productId: '',
@@ -193,7 +190,7 @@ export default {
             res.data.productReviewRecords.map((item) => {
               if (item.reportImages) {
                 const imgList = []
-                const vedioList = []
+                const videoList = []
                 const pdfList = []
                 item.reportImages.map(obj => {
                   if (obj) {
@@ -208,10 +205,10 @@ export default {
                       })
                       item.pdfList = pdfList
                     } else {
-                      vedioList.push({
+                      videoList.push({
                         url: obj.url
                       })
-                      item.vedioList = vedioList
+                      item.vedioList = videoList
                     }
                   }
                 })
@@ -276,7 +273,7 @@ export default {
     top: 0;
     width: 100%;
     height: 1px;
-    background: #1A9D98;
+    background: #ffffff;
     transform: scaleY(0.5);
   }
 }
@@ -305,7 +302,7 @@ export default {
         margin: 0 auto;
         overflow: hidden;
         border-radius: 6px;
-        box-shadow: 0px 3px 8px 0px #555B64;
+        box-shadow: 0 3px 8px 0 #555B64;
         .my-swipe {
           height: 100%;
         }
@@ -336,7 +333,7 @@ export default {
         flex:1;
         font-size: 15px;
         border-radius: 6px;
-        box-shadow: 0px 0px 3px 1px rgba(0 , 0, 0 , 0.1);
+        box-shadow: 0 0 3px 1px rgba(0 , 0, 0 , 0.1);
       }
     }
     .tabs-main {
@@ -408,7 +405,7 @@ export default {
     align-items: center;
     >p {
       width: 90%;
-      padding: 15px 0px;
+      padding: 15px 0;
       text-align: left;
       display: flex;
       align-items: center;
@@ -443,7 +440,7 @@ export default {
 </style>
 <style>
 #scan-info > .van-hairline--bottom::after {
-  border-bottom-width: 0px;
+  border-bottom-width: 0;
 }
 #scan-info > .van-nav-bar > .van-nav-bar__content {
   background: #1A9D98;
@@ -476,7 +473,7 @@ export default {
 }
 #scan-info .van-popup__close-icon {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   left: 50%;
   margin-left: -15px;
   border: 1px solid #fff;
