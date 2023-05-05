@@ -10,11 +10,10 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {
-    },
+    proxyTable: {},
 
     // Various Dev Server settings
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 10800,
     autoOpenBrowser: false,
     errorOverlay: true,

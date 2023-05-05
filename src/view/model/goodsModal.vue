@@ -51,7 +51,7 @@
       <!-- 产品介绍图 -->
       <ul class="list list-img" v-if="formData.goosInfo.description && formData.goosInfo.description.length > 0">
         <li v-for="item in formData.goosInfo.description" :key="item.id" >
-          <img :src="item.url">
+          <img :src="item.url" alt="">
         </li>
       </ul>
    </div>
@@ -95,9 +95,10 @@ export default {
 
 <style lang="scss" scoped>
 #product-modal {
-  padding: 0  0 15px;
+  padding: 0 0 15px;
   border-radius: 6px;
-  box-shadow: 0px 0px 8px 2px #ccc;
+  box-shadow: 0 0 8px 2px #ccc;
+
   .row-title-circle {
     height: 50px;
     line-height: 50px;
@@ -107,7 +108,8 @@ export default {
     text-align: left;
     overflow: hidden;
     font-family: PingFang SC;
-    >span {
+
+    > span {
       font-weight: 600;
     }
     .circle {

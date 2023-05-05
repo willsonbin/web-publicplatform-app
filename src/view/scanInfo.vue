@@ -3,16 +3,16 @@
     <!--   left-arrow
       @click-left="onClickLeft" -->
     <!-- <van-nav-bar
-      title="中国检科院粤港澳大湾区研究院质量安全追溯"
+      title="(试运行）中国检科院粤港澳大湾区研究院质量安全追溯"
       left-text=""
       right-text=""
     /> -->
     <!-- 内容 -->
     <div class="content" :style="{'padding-top': (!formData.goosInfo.images || formData.goosInfo.images.length == 0) ? '20px' : '0'}">
       <!-- logo图片 -->
-      <div style="padding: 0 12px;">
-        <img src="../view/logo.png" alt="" style="margin:0;width: 100%;height: 100%;border-radius: 6px;"/>
-      </div>
+      <!--      <div style="padding: 0 12px;">
+              <img src="../view/logo.png" alt="" style="margin:0;width: 100%;height: 100%;border-radius: 6px;"/>
+            </div>-->
       <div class="picture" v-if="formData.goosInfo && formData.goosInfo.images && formData.goosInfo.images.length > 0">
         <div class="white-box">
           <!-- 商品图片 -->
