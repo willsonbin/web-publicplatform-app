@@ -35,11 +35,11 @@
           <h5>执行标准：</h5>
           <p>{{formData.goosInfo.implementStandard}}</p>
         </li>
-        <li v-if="formData.goosInfo.materialName && formData.goosInfo.materialName.length > 0">>
+        <li v-if="formData.goosInfo.materialName && formData.goosInfo.materialName.length > 0">
           <h5>原料投料：</h5>
           <p>{{ formData.goosInfo.materialName }}</p>
         </li>
-        <li v-if="formData.goosInfo.nutritionFacts && formData.goosInfo.nutritionFacts.length > 0">>
+        <li v-if="formData.goosInfo.nutritionFacts && formData.goosInfo.nutritionFacts.length > 0">
           <h5>配料表（成分表）：</h5>
           <p>{{ formData.goosInfo.nutritionFacts }}</p>
         </li>
