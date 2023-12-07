@@ -23,11 +23,6 @@
           <p>{{formData.goosInfo.shelfLife}}{{ formData.goosInfo.shelfLifeType | shelfLifeFilter}}</p>
         </li>
         <li>
-          <h5>生产日期：</h5>
-          <p>{{formData.goosInfo.createDate ? formData.goosInfo.createDate.split(' ')[0] : ''}}</p>
-        </li>
-
-        <li>
           <h5>存储条件：</h5>
           <p>{{formData.goosInfo.storageConditions}}</p>
         </li>

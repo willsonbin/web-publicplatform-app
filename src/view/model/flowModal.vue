@@ -42,6 +42,7 @@
                 <h5>生产批次：</h5>
                 <p>{{formData.materials.batchNo}}</p>
               </li>
+
             </ul>
         </div>
         <!-- 生产加工信息 -->
@@ -62,10 +63,6 @@
             <li>
               <h5>地址：</h5>
               <p>{{formData.product.processingAddress}}</p>
-            </li>
-            <li>
-              <h5>生产加工日期：</h5>
-              <p>{{formData.product.createDate ? formData.product.createDate.split(' ')[0] : ''}}</p>
             </li>
             <li>
               <h5>生产加工批次：</h5>
